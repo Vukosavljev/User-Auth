@@ -1,0 +1,84 @@
+<form
+    [formGroup]="newUserForm"
+    class="card"
+>
+    <div class="form-element">
+        <label for="userName">User name:</label>
+        <input
+            formControlName="userName"
+            type="text"
+            id="userName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="pass">Password:</label>
+        <input
+            formControlName="password"
+            type="password"
+            id="pass"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="fName">First name:</label>
+        <input
+            formControlName="firstName"
+            type="text"
+            id="fName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="lName">Last name:</label>
+        <input
+            formControlName="lastName"
+            type="text"
+            id="lName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="address">Address:</label>
+        <input
+            formControlName="address"
+            type="text"
+            id="address"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="pNum">Post number:</label>
+        <input
+            formControlName="postNumber"
+            type="number"
+            id="pNum"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="city">City:</label>
+        <input
+            formControlName="city"
+            type="text"
+            id="city"
+        >
+    </div>
+
+    <div class="button-holder">
+        <button
+            type="button"
+            [disabled]="newUserForm.invalid"
+            class="primary-btn save-btn"
+            (click)="saveNewUser()"
+        >
+            Save
+        </button>
+    </div>
+</form>
+
+<app-notification
+    *ngIf="showNotification"
+    [success]="notificationSuccess"
+    [text]="notificationText"
+></app-notification>

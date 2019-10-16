@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.card {
+  margin: 2rem auto;
+  width: 80%;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.form-element {
+  margin: .5rem 0;
+  display: flex;
+  label {
+    display: block;
+    width: 45%;
+  }
+}
+
+.primary-btn {
+  cursor: pointer;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  background: #1976d2;
+  color: #fff;
+  &:hover {
+    background: rgb(41, 131, 204);
+  }
+}
+
+.button-holder {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  .save-btn {
+    display: block;
+  }
+}
+
+button:disabled {
+  color: #000
+}
+
+@media only screen and (min-width: 850px) {
+  .card {
+    width: 50%;
+  }
+}

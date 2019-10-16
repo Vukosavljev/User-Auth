@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="detail">
+        <p>User name:</p>
+        <p>{{ userDetails?.userName }}</p>
+    </div>
+    <div class="detail">
+        <p>Password:</p>
+        <p>
+            {{ hidePassword(userDetails?.password) }}
+        </p>
+    </div>
+    <div class="detail">
+        <p>First name:</p>
+        <p>{{ userDetails?.firstName }}</p>
+    </div>
+    <div class="detail">
+        <p>Last name:</p>
+        <p>{{ userDetails?.lastName }}</p>
+    </div>
+    <div class="detail">
+        <p>Address:</p>
+        <p>{{ userDetails?.address }}</p>
+    </div>
+    <div class="detail">
+        <p>Post number:</p>
+        <p>{{ userDetails?.postNumber }}</p>
+    </div>
+    <div class="detail">
+        <p>City:</p>
+        <p>{{ userDetails?.city }}</p>
+    </div>
+
+    <div class="buttons">
+        <button
+            type="button"
+            class="primary-btn btn"
+            (click)="editUser()"
+        >
+            Edit
+        </button>
+        <button
+            type="button"
+            class="primary-btn btn"
+            [routerLink]="['/add-user']"
+        >
+            Add User
+        </button>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<form
+    [formGroup]="userForm"
+    class="card"
+>
+    <div class="form-element">
+        <label for="userName">User name:</label>
+        <input
+            formControlName="userName"
+            type="text"
+            readonly
+            id="userName"
+        >
+    </div>
+
+    <div
+        class="form-element"
+        (click)="changePassword()"
+    >
+        <label for="pass">Password:</label>
+        <input
+            formControlName="password"
+            readonly
+            type="password"
+            id="pass"
+        >
+    </div>
+
+    <!-- CHANGE PASSWORD -->
+    <app-change-password
+        *ngIf="isPasswordChanged"
+        [user]="this.userForm.value"
+        [userId]="userId"
+        (newPassword)="getNewPassword($event)"
+        (closeEditPassword)="closePasswordCard()"
+    ></app-change-password>
+
+    <div class="form-element">
+        <label for="fName">First name:</label>
+        <input
+            formControlName="firstName"
+            type="text"
+            id="fName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="lName">Last name:</label>
+        <input
+            formControlName="lastName"
+            type="text"
+            id="lName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="address">Address:</label>
+        <input
+            formControlName="address"
+            type="text"
+            id="address"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="pNum">Post number:</label>
+        <input
+            formControlName="postNumber"
+            type="number"
+            id="pNum"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="city">City:</label>
+        <input
+            formControlName="city"
+            type="text"
+            id="city"
+        >
+    </div>
+
+    <div class="button-holder">
+        <button
+            type="button"
+            [disabled]="userForm.invalid || userForm.pristine"
+            class="primary-btn save-btn"
+            (click)="saveChanges()"
+        >
+            Save
+        </button>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+<form
+    class="card"
+    [formGroup]="logInForm"
+    (ngSubmit)="onSubmit()"
+>
+    <div class="form-element">
+        <label for="userName">User name:</label>
+        <input
+            formControlName="userName"
+            type="text"
+            id="userName"
+        >
+    </div>
+
+    <div class="form-element">
+        <label for="pass">Password:</label>
+        <input
+            formControlName="password"
+            type="password"
+            id="pass"
+        >
+    </div>
+
+    <div class="form-group">
+        <button
+            [disabled]="logInForm.invalid"
+            type="submit"
+            class="primary-btn"
+        >
+            log in
+        </button>
+    </div>
+</form>
+
+<app-notification
+    *ngIf="invalidUser"
+    [success]="false"
+    [text]="'User name or password is incorrect.'"
+></app-notification>

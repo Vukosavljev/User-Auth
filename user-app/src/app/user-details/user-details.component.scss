@@ -1,0 +1,16 @@
+.detail {
+  display: flex;
+  margin: .5rem 0;
+  & p:first-child {
+    width: 30%;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  .btn {
+    display: block;
+    width: 100px;
+  }
+}
